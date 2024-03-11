@@ -3,19 +3,19 @@ package org.tfoc;
 public class Movie {
 
     private String title;
-    private MovieType priceCode;
+    private MovieType movieType;
 
-    public Movie(String title, MovieType priceCode) {
+    public Movie(String title, MovieType movieType) {
         this.title = title;
-        this.priceCode = priceCode;
+        this.movieType = movieType;
     }
 
-    public MovieType getPriceCode() {
-        return priceCode;
+    public MovieType getMovieType() {
+        return movieType;
     }
 
-    public void setPriceCode(MovieType arg) {
-        priceCode = arg;
+    public void setMovieType(MovieType movieType) {
+        this.movieType = movieType;
     }
 
     public String getTitle() {
