@@ -28,12 +28,9 @@ public class Customer {
 
         for (Rental rental : rentals) {
 
-            double thisAmount = calculateRentalCost(rental);
+            double thisAmount = rental.calculateRentalCost();
 
-            frequentRenterPoints++;
-            // add bonus for a two day new release rental
-            if ((rental.getMovie().getMovieType() == MovieType.NEW_RELEASE) && rental.getDaysRented() > 1)
-                frequentRenterPoints++;
+            frequentRenterPoints += rental.obtainRentalFrequentRenderPoints();
 
             result += appendRentalCostInfo(rental, thisAmount);
             totalAmount += thisAmount;
@@ -50,26 +47,6 @@ public class Customer {
 
     private String appendCustomerHeader() {
         return "Rental Record for " + getName() + "\n";
-    }
-
-    private double calculateRentalCost(Rental rental) {
-
-        int daysRented = rental.getDaysRented();
-        return switch (rental.getMovie().getMovieType()) {
-            case REGULAR -> {
-                double cost = 2;
-                if (daysRented > 2)
-                    cost += (daysRented - 2) * 1.5;
-                yield cost;
-            }
-            case NEW_RELEASE -> daysRented * 3;
-            case CHILDREN -> {
-                double cost = 1.5;
-                if (daysRented > 3)
-                    cost += (daysRented - 3) * 1.5;
-                yield cost;
-            }
-        };
     }
 
     private String appendFooterLines(double totalAmount, int frequentRenterPoints) {

@@ -10,3 +10,7 @@ Rename movie priceCode variable to movieType
 Inicializar rentals en el constructor
 #### 5
 Metodo statement
+#### 6
+Metodos a correspondiente clase (rental)
+#### 7 
+patrón strategy o similar
