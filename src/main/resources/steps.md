@@ -13,4 +13,4 @@ Metodo statement
 #### 6
 Metodos a correspondiente clase (rental)
 #### 7 
-patrón strategy o similar
+Tipos de peliculas como herencias de clase abstracta Movie (eliminar enumerado)

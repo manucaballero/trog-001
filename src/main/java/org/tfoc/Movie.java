@@ -1,25 +1,22 @@
 package org.tfoc;
 
-public class Movie {
+public abstract class Movie {
 
     private String title;
-    private MovieType movieType;
 
-    public Movie(String title, MovieType movieType) {
+    public Movie(String title) {
+
         this.title = title;
-        this.movieType = movieType;
     }
 
-    public MovieType getMovieType() {
-        return movieType;
-    }
+    abstract double calculateRentalCost(int daysRented);
 
-    public void setMovieType(MovieType movieType) {
-        this.movieType = movieType;
+    int obtainRentalFrequentRenderPoints(int daysRented){
+
+        return 0;
     }
 
     public String getTitle() {
         return title;
     }
-
 }
